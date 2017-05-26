@@ -89,7 +89,7 @@
   self.attributedPlaceholder = string;
   ```
 
-##### - 方法4:
+- ##### 方法4:
   重写drawPlaceholderInRect方法
   ```
   NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
@@ -105,10 +105,12 @@
 
   ![视图分层](http://upload-images.jianshu.io/upload_images/3284707-62fc07adab44038a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1024)
 
-- 而占位视图是通过什么来显示呢?
+  而占位视图是通过什么来显示呢?
+  
   根据`self.subviews.lastObject.class`,可知占位图是通过UITextFieldLabel显示的,根据`self.subviews.lastObject.superClass`可知UITextFieldLabel的父类是UILabel,所以可以使用`.textColor`方法去显示文字颜色.**但是**,不能保证`self.subviews.lastObject.class`方法中取到的一定是UITextFieldLabel.所以运行时就上场了.
   
-- 因为UITextFieldLabel在UITextField.h头文件中找不到具体内容,只是简单的@class声明一下,所以需要利用运行时,查看UITextField的成员变量或属性,结果,你高兴的发现了这个家伙 -- placeholderLabel,这时候可以理解为placeholderLabel属性指向UITextFieldLabel所对应的内容,所以占位视图也是placeholderLabel啦!!!那么,也可以通过`.textColor`设置颜色.
+  因为UITextFieldLabel在UITextField.h头文件中找不到具体内容,只是简单的@class声明一下,所以需要利用运行时,查看UITextField的成员变量或属性,结果,你高兴的发现了这个家伙 -- placeholderLabel,这时候可以理解为placeholderLabel属性指向UITextFieldLabel所对应的内容,所以占位视图也是placeholderLabel啦!!!那么,也可以通过`.textColor`设置颜色.
+
   ```
   unsigned int count;
   Ivar *ivarList = class_copyIvarList([UITextField class], &count);
