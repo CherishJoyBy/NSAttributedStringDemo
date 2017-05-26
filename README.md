@@ -27,18 +27,18 @@
 ```
 - NSMutableAttributedString常用的有三种方法:
 
-1.设置range范围的属性, 重复设置同一个范围的属性, 后面一次设置会覆盖前面的设置.
-```
-  - (void)setAttributes:(nullable NSDictionary<NSString *, id> *)attrs   range:(NSRange)range;
-```
-2.添加range范围的属性, 同一个范围, 可以不断添加属性.
-```
-  - (void)addAttribute:(NSString *)name value:(id)value range:(NSRange)range;
-```
-3.一次性添加一个范围内的多个属性.
-```
-  - (void)addAttributes:(NSDictionary<NSString *, id> *)attrs range:(NSRange)range;
-```
+  1.设置range范围的属性, 重复设置同一个范围的属性, 后面一次设置会覆盖前面的设置.
+  ```
+    - (void)setAttributes:(nullable NSDictionary<NSString *, id> *)attrs   range:(NSRange)range;
+  ```
+  2.添加range范围的属性, 同一个范围, 可以不断添加属性.
+  ```
+    - (void)addAttribute:(NSString *)name value:(id)value range:(NSRange)range;
+  ```
+  3.一次性添加一个范围内的多个属性.
+  ```
+    - (void)addAttributes:(NSDictionary<NSString *, id> *)attrs range:(NSRange)range;
+  ```
 
 #### 三.需求
 - 给文本框设置占位文字的字体颜色、背景颜色以及下划线.
@@ -132,4 +132,4 @@ NSAttributedString *attributeText = [[NSAttributedString alloc] initWithString:@
 * 说明:
 UITextFieldLabel的父类为UILabel.UILabel中有TextColor属性,而UILabel继承自UIView,UIView中有backgroundColor属性.所以UITextFieldLabel就可以设置文字颜色和背景颜色.而placeholderLabel是程序内部私有的属性,指向UITextFieldLabel的内容,所以也能设置文字颜色和背景颜色.
 
-### 欢迎访问简书 :[<iOS开发>之NSAttributedString使用](http://www.jianshu.com/p/b62081c427a4)
+### 欢迎访问简书 :[<iOS开发>之NSAttributedString使用](http://www.jianshu.com/p/fd9382ec2a4d)
