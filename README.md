@@ -1,5 +1,7 @@
 ＃NSAttributedStringDemo
+
 ###本文介绍了NSAttributedString和NSMutableAttributedString的简单用法.
+
 ####一. NSAttributedString介绍
 - 摘自NSAttributedString.h文件
 ```
@@ -55,7 +57,7 @@ self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"o惜�
 - 注意 : 别忘记指定UITextField的Class
 如图:
 
-![关联UITextField的Class](http://upload-images.jianshu.io/upload_images/3284707-609ac89bf4ecb83f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480)
+![关联UITextField的Class](http://upload-images.jianshu.io/upload_images/3284707-609ac89bf4ecb83f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1024)
 
 
 - #####方法2:
