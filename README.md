@@ -4,9 +4,11 @@
 
 #### 一. NSAttributedString介绍
 - 摘自NSAttributedString.h文件
+
 ```
 @interface NSAttributedString : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
 ```
+
 - 它由2部分组成
 1.文字内容 : `NSString *`
 2.文字属性: `NSDictionary *`
@@ -129,5 +131,4 @@ NSAttributedString *attributeText = [[NSAttributedString alloc] initWithString:@
 * 说明:
 UITextFieldLabel的父类为UILabel.UILabel中有TextColor属性,而UILabel继承自UIView,UIView中有backgroundColor属性.所以UITextFieldLabel就可以设置文字颜色和背景颜色.而placeholderLabel是程序内部私有的属性,指向UITextFieldLabel的内容,所以也能设置文字颜色和背景颜色.
 
-####**GitHub:[NSAttributedStringDemo](https://github.com/CherishJoyBy/NSAttributedStringDemo)**
 ### 欢迎访问简书 :[<iOS开发>之NSAttributedString使用](http://www.jianshu.com/p/b62081c427a4)
