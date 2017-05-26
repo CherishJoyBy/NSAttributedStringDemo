@@ -23,6 +23,7 @@
 @interface NSMutableAttributedString : NSAttributedString
 ```
 - NSMutableAttributedString常用的有三种方法:
+
 1.设置range范围的属性, 重复设置同一个范围的属性, 后面一次设置会覆盖前面的设置.
 ```
   - (void)setAttributes:(nullable NSDictionary<NSString *, id> *)attrs   range:(NSRange)range;
@@ -42,7 +43,7 @@
 
 #### 四.解决
 - ##### 方法1.
-通过NSAttributedString实现,自定义一个继承至UITextField的类,在awakeFromNib方法中写以下代码.
+  通过NSAttributedString实现,自定义一个继承至UITextField的类,在awakeFromNib方法中写以下代码.
 ```
 NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
 attributes[NSForegroundColorAttributeName] = [UIColor yellowColor];
