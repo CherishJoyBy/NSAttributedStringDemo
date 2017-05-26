@@ -6,25 +6,28 @@
 
 - 摘自NSAttributedString.h文件
 
-```
-@interface NSAttributedString : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
-```
+  ```
+  @interface NSAttributedString : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
+  ```
 
 - 它由2部分组成
-1.文字内容 : `NSString *`
-2.文字属性: `NSDictionary *`
-```
-文字颜色 - NSForegroundColorAttributeName
-字体大小 - NSFontAttributeName
-下划线 - NSUnderlineStyleAttributeName
-背景色 - NSBackgroundColorAttributeName
-```
+
+  1.文字内容 : `NSString *`
+  2.文字属性: `NSDictionary *`
+
+  ```
+  文字颜色 - NSForegroundColorAttributeName
+  字体大小 - NSFontAttributeName
+  下划线 - NSUnderlineStyleAttributeName
+  背景色 - NSBackgroundColorAttributeName
+  ```
 
 #### 二.NSMutableAttributedString介绍
 - 摘自NSAttributedString.h文件
-```
-@interface NSMutableAttributedString : NSAttributedString
-```
+
+  ```
+  @interface NSMutableAttributedString : NSAttributedString
+  ```
 - NSMutableAttributedString常用的有三种方法:
 
   1.设置range范围的属性, 重复设置同一个范围的属性, 后面一次设置会覆盖前面的设置.
