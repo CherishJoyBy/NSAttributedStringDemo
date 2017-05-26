@@ -1,8 +1,8 @@
-＃NSAttributedStringDemo
+# NSAttributedStringDemo
 
-###本文介绍了NSAttributedString和NSMutableAttributedString的简单用法.
+### 本文介绍了NSAttributedString和NSMutableAttributedString的简单用法.
 
-####一. NSAttributedString介绍
+#### 一. NSAttributedString介绍
 - 摘自NSAttributedString.h文件
 ```
 @interface NSAttributedString : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
@@ -17,7 +17,7 @@
 背景色 - NSBackgroundColorAttributeName
 ```
 
-####二.NSMutableAttributedString介绍
+#### 二.NSMutableAttributedString介绍
 - 摘自NSAttributedString.h文件
 ```
 @interface NSMutableAttributedString : NSAttributedString
@@ -36,12 +36,12 @@
   - (void)addAttributes:(NSDictionary<NSString *, id> *)attrs range:(NSRange)range;
 ```
 
-####三.需求
+#### 三.需求
 - 给文本框设置占位文字的字体颜色、背景颜色以及下划线.
 通过xib或者storyboard创建的界面,在界面右侧是找不到对应的设置属性.
 
-####四.解决
-- #####方法1.
+#### 四.解决
+- ##### 方法1.
 通过NSAttributedString实现,自定义一个继承至UITextField的类,在awakeFromNib方法中写以下代码.
 ```
 NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
@@ -60,7 +60,7 @@ self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"o惜�
 ![关联UITextField的Class](http://upload-images.jianshu.io/upload_images/3284707-609ac89bf4ecb83f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1024)
 
 
-- #####方法2:
+- ##### 方法2:
 通过NSMutableAttributedString实现.代码如下:
 ```
 NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"o惜乐o"];
@@ -71,7 +71,7 @@ attributes[NSUnderlineStyleAttributeName] = @YES;
 [string setAttributes:attributes range:NSMakeRange(0, 4)];
 self.attributedPlaceholder = string;
 ```
-- #####方法3:
+- ##### 方法3:
 ```
 NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"o惜乐o"];
 [string addAttribute:NSForegroundColorAttributeName value:[UIColor yellowColor] range:NSMakeRange(0, 4)];
@@ -80,7 +80,7 @@ NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithS
 self.attributedPlaceholder = string;
 ```
 
-- #####方法4:
+- ##### 方法4:
 重写drawPlaceholderInRect方法
 ```
 NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
@@ -91,7 +91,7 @@ attributes[NSUnderlineStyleAttributeName] = @YES;
 CGPoint placeholderPoint = CGPointMake(0, (rect.size.height - self.font.lineHeight) * 0.5);
 [self.placeholder drawAtPoint:placeholderPoint withAttributes:attributes];
 ```
-- #####方法5:
+- ##### 方法5:
 通过视图分层可以看出,UITextField中包含UITextFieldLabel.
 
 ![视图分层](http://upload-images.jianshu.io/upload_images/3284707-62fc07adab44038a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480)
@@ -129,4 +129,4 @@ NSAttributedString *attributeText = [[NSAttributedString alloc] initWithString:@
 UITextFieldLabel的父类为UILabel.UILabel中有TextColor属性,而UILabel继承自UIView,UIView中有backgroundColor属性.所以UITextFieldLabel就可以设置文字颜色和背景颜色.而placeholderLabel是程序内部私有的属性,指向UITextFieldLabel的内容,所以也能设置文字颜色和背景颜色.
 
 ####**GitHub:[NSAttributedStringDemo](https://github.com/CherishJoyBy/NSAttributedStringDemo)**
-####**如果对您有帮助,请点个赞,如有不足之处还望指正...**
+### 欢迎访问简书 :[<iOS开发>之NSAttributedString使用](http://www.jianshu.com/p/b62081c427a4)
