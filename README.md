@@ -49,7 +49,7 @@
 通过xib或者storyboard创建的界面,在界面右侧是找不到对应的设置属性.
 
 #### 四.解决
-##### - 方法1:
+- ##### 方法1:
   通过NSAttributedString实现,自定义一个继承至UITextField的类,在awakeFromNib方法中写以下代码.
   ```
   NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
@@ -69,7 +69,7 @@
   ![关联UITextField的Class](http://upload-images.jianshu.io/upload_images/3284707-609ac89bf4ecb83f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1024)
 
 
-##### - 方法2:
+- ##### 方法2:
   通过NSMutableAttributedString实现.代码如下:
   ```
   NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"o惜乐o"];
@@ -80,7 +80,7 @@
   [string setAttributes:attributes range:NSMakeRange(0, 4)];
   self.attributedPlaceholder = string;
   ```
-##### - 方法3:
+- ##### 方法3:
   ```
   NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"o惜乐o"];
   [string addAttribute:NSForegroundColorAttributeName value:[UIColor yellowColor] range:NSMakeRange(0, 4)];
